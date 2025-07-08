@@ -38,4 +38,10 @@ class User extends Authenticatable
     {
         return $this->hasRole('admin');
     }
+
+    public function doctor()
+    {
+        return $this->hasOne(Doctor::class);
+    }
+   
 }

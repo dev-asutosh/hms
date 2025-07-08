@@ -2,10 +2,21 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FrontendController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/', [FrontendController::class, 'home'])->name('home');
+Route::get('/about', [FrontendController::class, 'about'])->name('about');
+Route::get('/services', [FrontendController::class, 'services'])->name('services');
+Route::get('/contact', [FrontendController::class, 'contact'])->name('contact');
+Route::get('/appointment', [FrontendController::class, 'appointment'])->name('appointment');
+
+// web.php
+Route::post('/appointments', [FrontendController::class, 'store'])->name('appointments.store');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
