@@ -17,6 +17,8 @@ Route::get('/appointment', [FrontendController::class, 'appointment'])->name('ap
 // web.php
 Route::post('/appointments', [FrontendController::class, 'store'])->name('appointments.store');
 
+// Route::view('/admin/subscribers', 'filament.admin.pages.subscribers');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
